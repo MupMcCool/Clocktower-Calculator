@@ -8,7 +8,7 @@ function calculatePowerScores(data) {
 		if (item.hasOwnProperty("name")) {
 			if (item.team === "good") {
 				goodTotal += item.powerScore;
-			} else if (item.team === ëvil") {
+			} else if (item.team === "evil") {
 				evilTotal += item.powerScore;
 			}
 		}
