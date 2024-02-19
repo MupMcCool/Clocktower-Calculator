@@ -34,8 +34,12 @@ function handleFileUpload(event) {
                     evilTotal += data.powerScore || 0;
                 }
             }
+            // Calculate averages
+            const goodAve = goodTotal / 2; // Assuming 2 good entries
+            const evilAve = evilTotal / 2; // Assuming 2 evil entries
+
             // Update display
-            resultElement.textContent = `Good: ${goodTotal}\nEvil: ${evilTotal}`;
+            resultElement.textContent = `Good: ${goodAve}\nEvil: ${evilAve}`;
         } catch (error) {
             resultElement.textContent = 'Error parsing JSON data.';
         }
