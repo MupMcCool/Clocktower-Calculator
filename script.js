@@ -1,6 +1,8 @@
 // Initialize goodTotal and evilTotal
 let goodTotal = 0;
 let evilTotal = 0;
+let goodCount = 0;
+let evilCount = 0;
 
 // Function to handle file submission
 function handleFileUpload(event) {
@@ -27,19 +29,21 @@ function handleFileUpload(event) {
         const jsonContent = e.target.result;
         try {
             const data = JSON.parse(jsonContent);
-            if (data.name && data.team) {
+            if (data.name && data.team && data.powerScore !== undefined) {
                 if (data.team === 'good') {
-                    goodTotal += data.powerScore || 0;
+                    goodTotal += data.powerScore;
+                    goodCount++;
                 } else if (data.team === 'evil') {
-                    evilTotal += data.powerScore || 0;
+                    evilTotal += data.powerScore;
+                    evilCount++;
                 }
             }
             // Calculate averages
-            const goodAve = goodTotal / 2; // Assuming 2 good entries
-            const evilAve = evilTotal / 2; // Assuming 2 evil entries
+            const goodAve = goodCount > 0 ? goodTotal / goodCount : 0;
+            const evilAve = evilCount > 0 ? evilTotal / evilCount : 0;
 
             // Update display
-            resultElement.textContent = `Good: ${goodAve}\nEvil: ${evilAve}`;
+            resultElement.textContent = `Good: ${goodAve.toFixed(2)}\nEvil: ${evilAve.toFixed(2)}`;
         } catch (error) {
             resultElement.textContent = 'Error parsing JSON data.';
         }
