@@ -15,6 +15,11 @@
         let goodCount = 0;
         let evilCount = 0;
 
+        // Assume powerScore.json contains an array of objects with properties: "name", "team", and "powerScore"
+        const powerScoreData = [
+            // ... Populate with data from powerScore.json ...
+        ];
+
         function handleFileUpload(event) {
             const fileInput = event.target;
             const resultElement = document.getElementById('result');
@@ -37,12 +42,17 @@
                 try {
                     const data = JSON.parse(jsonContent);
                     if (data.name && data.team && data.powerScore !== undefined) {
-                        if (data.team === 'good') {
-                            goodTotal += data.powerScore;
-                            goodCount++;
-                        } else if (data.team === 'evil') {
-                            evilTotal += data.powerScore;
-                            evilCount++;
+                        const matchingPowerScore = powerScoreData.find(
+                            (entry) => entry.name === data.name && entry.team === data.team
+                        );
+                        if (matchingPowerScore) {
+                            if (data.team === 'good') {
+                                goodTotal += matchingPowerScore.powerScore;
+                                goodCount++;
+                            } else if (data.team === 'evil') {
+                                evilTotal += matchingPowerScore.powerScore;
+                                evilCount++;
+                            }
                         }
                     }
                     const goodAve = goodCount > 0 ? goodTotal / goodCount : 0;
