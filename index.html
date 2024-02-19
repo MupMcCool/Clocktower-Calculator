@@ -17,7 +17,6 @@
         const goodTotal = 0;
         const evilTotal = 0;
 
-        // Event listener for form submission
         document.getElementById('jsonForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const fileInput = document.getElementById('jsonFile');
@@ -32,13 +31,9 @@
                 const jsonText = await file.text();
                 const jsonData = JSON.parse(jsonText);
 
-                // Assuming powerScore.json contains an array of objects with "name", "team", and "powerScore"
-                // You can replace this with your actual data
-                const powerScoreData = [
-                    { name: 'John', team: 'good', powerScore: 10 },
-                    { name: 'Anna', team: 'evil', powerScore: 8 },
-                    // Add more data...
-                ];
+                // Load powerScore.json (replace with your actual data source)
+                const response = await fetch('powerScore.json');
+                const powerScoreData = await response.json();
 
                 let goodCount = 0;
                 let evilCount = 0;
