@@ -8,7 +8,7 @@ let evilTotal = 0;
 const powerScoreData = [
     // Add your powerScore.json data here
     // ...
-    [
+    
 {
 "name": "snake_charmer",
 "powerScore": 130,
@@ -629,7 +629,7 @@ const powerScoreData = [
 "powerScore": 26,
 "team": "evil"
 }
-]
+
 ];
 
 // Handle file upload
