@@ -3,65 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Score Calculator</title>
+    <title>PowerScore Comparison</title>
 </head>
 <body>
-    <h1>Power Score Calculator</h1>
+    <h1>PowerScore Comparison</h1>
     <form id="jsonForm">
-        <input type="file" id="jsonFile" accept=".json">
+        <input type="file" accept=".json" id="jsonFileInput">
         <button type="submit">Submit JSON</button>
     </form>
-    <div id="result"></div>
+    <p id="result"></p>
 
     <script>
         const goodTotal = 0;
         const evilTotal = 0;
 
+        // Read powerScore.json (you can replace this with your actual data)
+        const powerScoreData = {
+            // Your powerScore.json data here...
+        };
+
         document.getElementById('jsonForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const fileInput = document.getElementById('jsonFile');
+            const fileInput = document.getElementById('jsonFileInput');
             const file = fileInput.files[0];
 
             if (!file || file.type !== 'application/json') {
-                alert('Please select a valid JSON file.');
+                document.getElementById('result').textContent = 'Error: Please select a valid JSON file.';
                 return;
             }
 
             try {
-                const jsonText = await file.text();
-                const jsonData = JSON.parse(jsonText);
+                const jsonContent = await file.text();
+                const submittedData = JSON.parse(jsonContent);
 
-                // Load powerScore.json (replace with your actual data source)
-                const response = await fetch('powerScore.json');
-                const powerScoreData = await response.json();
+                // Compare submittedData with powerScoreData and update goodTotal and evilTotal
+                // Calculate averages (goodAve and evilAve)
 
-                let goodCount = 0;
-                let evilCount = 0;
-                let goodSum = 0;
-                let evilSum = 0;
-
-                jsonData.forEach((entry) => {
-                    const matchingEntry = powerScoreData.find((item) => item.name === entry.name);
-                    if (matchingEntry) {
-                        if (matchingEntry.team === 'good') {
-                            goodCount++;
-                            goodSum += matchingEntry.powerScore;
-                        } else if (matchingEntry.team === 'evil') {
-                            evilCount++;
-                            evilSum += matchingEntry.powerScore;
-                        }
-                    }
-                });
-
-                const goodAve = goodCount > 0 ? goodSum / goodCount : 0;
-                const evilAve = evilCount > 0 ? evilSum / evilCount : 0;
-
-                document.getElementById('result').innerHTML = `
-                    <p>Good: ${goodAve.toFixed(2)}</p>
-                    <p>Evil: ${evilAve.toFixed(2)}</p>
-                `;
+                // Display results
+                document.getElementById('result').textContent = `Good: ${goodAve}\nEvil: ${evilAve}`;
             } catch (error) {
-                console.error('Error reading JSON file:', error);
+                document.getElementById('result').textContent = 'Error reading JSON file.';
             }
         });
     </script>
