@@ -14,12 +14,14 @@
     <p id="result"></p>
 
     <script>
+        // Initialize goodTotal and evilTotal
         let goodTotal = 0;
         let evilTotal = 0;
 
         // Read powerScore.json (you can replace this with your actual data)
-        const powerScoreData = {
+        const powerScoreData = [
             // Your powerScore.json data here...
+            // Example: { name: "Superman", team: "good", powerScore: 100 }
             [
 {
 "name": "snake_charmer",
@@ -642,7 +644,7 @@
 "team": "evil"
 }
 ]
-        };
+        ];
 
         document.getElementById('jsonForm').addEventListener('submit', async (e) => {
             e.preventDefault();
