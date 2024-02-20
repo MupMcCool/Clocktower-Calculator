@@ -14,14 +14,13 @@
     <p id="result"></p>
 
     <script>
-        // Initialize goodTotal and evilTotal
         let goodTotal = 0;
         let evilTotal = 0;
 
-        // Read powerScore.json (you can replace this with your actual data)
+        // Read powerScore.json (replace with your actual data)
         const powerScoreData = [
-            // Your powerScore.json data here...
-            // Example: { name: "Superman", team: "good", powerScore: 100 }
+            // Example: { name: "Superman", team: "good", powerScore: 100 },
+            // Add more entries as needed
             [
 {
 "name": "snake_charmer",
@@ -660,7 +659,7 @@
                 const jsonContent = await file.text();
                 const submittedData = JSON.parse(jsonContent);
 
-                // Compare submittedData with powerScoreData and update goodTotal and evilTotal
+                // Compare submittedData with powerScoreData and update totals
                 for (const item of submittedData) {
                     const matchingPowerScore = powerScoreData.find((score) => score.name === item.name);
                     if (matchingPowerScore) {
@@ -672,8 +671,12 @@
                     }
                 }
 
+                // Calculate averages
+                const goodAve = goodTotal / submittedData.length;
+                const evilAve = evilTotal / submittedData.length;
+
                 // Display results
-                document.getElementById('result').textContent = `Good: ${goodTotal}\nEvil: ${evilTotal}`;
+                document.getElementById('result').textContent = `Good: ${goodAve}\nEvil: ${evilAve}`;
             } catch (error) {
                 document.getElementById('result').textContent = 'Error reading JSON file.';
             }
