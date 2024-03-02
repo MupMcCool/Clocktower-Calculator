@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes App</title>
+    <title>Clocktower Calculator</title>
     <style>
         /* Basic styling */
         body {
@@ -53,10 +53,10 @@
     </style>
 </head>
 <body>
-    <h1>Notes App</h1>
-    <form id="notesForm">
+    <h1>Clocktower Calculator</h1>
+    <form id="jsonForm">
         <input type="file" id="jsonFileInput">
-        <button type="submit">Submit</button>
+        <button type="submit">Submit JSON</button>
     </form>
     <div id="result"></div>
     <img id="bouncing-image" src="https://i.ibb.co/JH6rg0Z/image244.png" alt="Bouncing Image">
@@ -70,7 +70,7 @@
             .then(data => {
                 const powerScores = data;
 
-                document.getElementById('notesForm').addEventListener('submit', handleFormSubmit);
+                document.getElementById('jsonForm').addEventListener('submit', handleFormSubmit);
 
                 function handleFormSubmit(event) {
                     event.preventDefault();
