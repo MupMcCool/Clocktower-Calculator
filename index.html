@@ -3,19 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerScore Comparison</title>
+    <title>PowerScore Calculator</title>
 </head>
 <body>
-    <h1>PowerScore Comparison</h1>
-    <p>Submit a JSON file:</p>
+    <h1>PowerScore Calculator</h1>
     <input type="file" id="jsonFileInput">
-    <button onclick="handleFileUpload()">Submit</button>
-    <p id="errorMessage" style="color: red;"></p>
-    <hr>
-    <p>Results:</p>
-    <p>Good: <span id="goodTotal">0</span></p>
-    <p>Evil: <span id="evilTotal">0</span></p>
+    <div id="result"></div>
 
-    <script src="script.js"></script>
+    <script>
+        // Initialize totals
+        let goodTotal = 0;
+        let evilTotal = 0;
+
+        // Fetch data from the provided URL (powerScore.json)
+        fetch('https://raw.githubusercontent.com/MupMcCool/Clocktower-Calculator/33a29b1ebae19eddf8abaf1d1bd9c0306c661794/powerScore.json')
+            .then(response => response.json())
+            .then(data => {
+                const powerScores = data; // Assuming the JSON structure contains an array of objects
+
+                // Handle file input change
+                document.getElementById('jsonFileInput').addEventListener('change', handleFileSelect);
+
+                function handleFileSelect(event) {
+                    const file = event.target.files[0];
+
+                    if (!file) {
+                        alert('Please select a JSON file.');
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        try {
+                            const submittedData = JSON.parse(e.target.result);
+
+                            // Process submitted JSON
+                            submittedData.forEach(item => {
+                                const matchingPowerScore = powerScores.find(score => score.id === item.id);
+                                if (matchingPowerScore) {
+                                    if (matchingPowerScore.team === 'good') {
+                                        goodTotal += matchingPowerScore.powerScore;
+                                    } else if (matchingPowerScore.team === 'evil') {
+                                        evilTotal += matchingPowerScore.powerScore;
+                                    }
+                                }
+                            });
+
+                            // Display results
+                            document.getElementById('result').innerHTML = `
+                                <p>Good: ${goodTotal}</p>
+                                <p>Evil: ${evilTotal}</p>
+                                <p>IDs used: ${submittedData.map(item => item.id).join(', ')}</p>
+                            `;
+                        } catch (error) {
+                            alert('Error processing the JSON file. Please ensure it is valid JSON.');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
 </body>
 </html>
