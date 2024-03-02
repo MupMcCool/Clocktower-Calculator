@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clocktower Calculator</title>
+    <title>Notes App</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0074d9;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #0074d9;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Bouncing image animation */
+        #bouncing-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Clocktower Calculator</h1>
-    <input type="file" id="jsonFileInput">
+    <h1>Notes App</h1>
+    <form id="notesForm">
+        <input type="file" id="jsonFileInput">
+        <button type="submit">Submit</button>
+    </form>
     <div id="result"></div>
-
+    <img id="bouncing-image" src="https://i.ibb.co/JH6rg0Z/image244.png" alt="Bouncing Image">
     <script>
-        // Initialize totals
         let goodTotal = 0;
         let evilTotal = 0;
 
@@ -19,16 +68,16 @@
         fetch('https://raw.githubusercontent.com/MupMcCool/Clocktower-Calculator/33a29b1ebae19eddf8abaf1d1bd9c0306c661794/powerScore.json')
             .then(response => response.json())
             .then(data => {
-                const powerScores = data; // Assuming the JSON structure contains an array of objects
+                const powerScores = data;
 
-                // Handle file input change
-                document.getElementById('jsonFileInput').addEventListener('change', handleFileSelect);
+                document.getElementById('notesForm').addEventListener('submit', handleFormSubmit);
 
-                function handleFileSelect(event) {
-                    const file = event.target.files[0];
+                function handleFormSubmit(event) {
+                    event.preventDefault();
+                    const file = document.getElementById('jsonFileInput').files[0];
 
-                    if (!file) {
-                        alert('Please select a JSON file.');
+                    if (!file || file.type !== 'application/json') {
+                        alert('Please select a valid JSON file.');
                         return;
                     }
 
@@ -37,7 +86,6 @@
                         try {
                             const submittedData = JSON.parse(e.target.result);
 
-                            // Process submitted JSON
                             submittedData.forEach(item => {
                                 const matchingPowerScore = powerScores.find(score => score.id === item.id);
                                 if (matchingPowerScore) {
@@ -49,11 +97,10 @@
                                 }
                             });
 
-                            // Display results
                             document.getElementById('result').innerHTML = `
-                                <p><strong>Good:</strong> ${goodTotal}</p>
-                                <p><strong>Evil:</strong> ${evilTotal}</p>
-                                <p><strong>IDs used:</strong></p>
+                                <p>Good: ${goodTotal}</p>
+                                <p>Evil: ${evilTotal}</p>
+                                <p>ID values used:</p>
                                 <ul>
                                     ${submittedData.map(item => `<li>${item.id} (Team: ${matchingPowerScore.team}, Value: ${matchingPowerScore.powerScore})</li>`).join('')}
                                 </ul>
