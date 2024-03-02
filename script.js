@@ -1,7 +1,8 @@
-const goodTotal = 0;
-const evilTotal = 0;
+// Initialize goodTotal and evilTotal
+let goodTotal = 0;
+let evilTotal = 0;
 
-// Fetch data from powerScore.json (you can replace this URL with your actual data source)
+// Fetch data from powerScore.json (replace with your actual data source)
 // For now, let's assume the data is an array of objects with 'id', 'team', and 'powerScore' properties
 const powerScoreData = [
     // Example data (replace with actual data)
@@ -21,8 +22,16 @@ function handleFileUpload(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         const submittedData = JSON.parse(e.target.result);
-        // Process submittedData and update goodTotal and evilTotal
-        // ...
+        submittedData.forEach(item => {
+            const matchingPowerScore = powerScoreData.find(dataItem => dataItem.id === item.id);
+            if (matchingPowerScore) {
+                if (matchingPowerScore.team === 'good') {
+                    goodTotal += matchingPowerScore.powerScore;
+                } else if (matchingPowerScore.team === 'evil') {
+                    evilTotal += matchingPowerScore.powerScore;
+                }
+            }
+        });
 
         // Update UI
         document.getElementById('goodTotal').textContent = goodTotal;
@@ -76,3 +85,5 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+// Start the animation
+animate();
