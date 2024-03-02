@@ -51,9 +51,12 @@
 
                             // Display results
                             document.getElementById('result').innerHTML = `
-                                <p>Good: ${goodTotal}</p>
-                                <p>Evil: ${evilTotal}</p>
-                                <p>IDs used: ${submittedData.map(item => item.id).join(', ')}</p>
+                                <p><strong>Good:</strong> ${goodTotal}</p>
+                                <p><strong>Evil:</strong> ${evilTotal}</p>
+                                <p><strong>IDs used:</strong></p>
+                                <ul>
+                                    ${submittedData.map(item => `<li>${item.id} (Team: ${matchingPowerScore.team}, Value: ${matchingPowerScore.powerScore})</li>`).join('')}
+                                </ul>
                             `;
                         } catch (error) {
                             alert('Error processing the JSON file. Please ensure it is valid JSON.');
