@@ -1,17 +1,21 @@
+/* styles.css */
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url('https://i.ibb.co/wQqt1SR/555f047b-aa3c-43de-ade5-5fc589a33a1b.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+#clocktower {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: bounce 3s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
