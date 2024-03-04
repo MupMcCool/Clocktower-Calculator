@@ -3,15 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Clocktower Calculator</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #calculator {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
-    <h1>Clocktower Calculator</h1>
-    <p>Good: <span id="goodTotal">0</span></p>
-    <p>Evil: <span id="evilTotal">0</span></p>
-    <div id="idValues"></div>
-    <img src="https://i.ibb.co/JH6rg0Z/image244.png" alt="Clocktower Image" id="clocktower">
-    <script src="script.js"></script>
+    <div id="calculator">
+        <h1>Clocktower Calculator</h1>
+        <p>Calculate power scores for good and evil teams!</p>
+        <button onclick="handleFileUpload()">Upload JSON</button>
+        <div id="error-message"></div>
+        <p>Good: <span id="goodTotal">0</span></p>
+        <p>Evil: <span id="evilTotal">0</span></p>
+        <div id="idValues"></div>
+    </div>
+
+    <script>
+        // Initialize totals
+        let goodTotal = 0;
+        let evilTotal = 0;
+
+        // Handle file upload
+        function handleFileUpload() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.addEventListener('change', processFile);
+            input.click();
+        }
+
+        // Process uploaded JSON file
+        function processFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const json = JSON.parse(e.target.result);
+                    if (json.id && json.team && json.value) {
+                        if (json.team === 'good') {
+                            goodTotal += json.value;
+                        } else if (json.team === 'evil') {
+                            evilTotal += json.value;
+                        }
+                        updateTotals();
+                        displayIdValue(json.id, json.team, json.value);
+                    } else {
+                        showError('Invalid JSON format.');
+                    }
+                } catch (error) {
+                    showError('Error parsing JSON.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Update total scores
+        function updateTotals() {
+            document.getElementById('goodTotal').textContent = goodTotal;
+            document.getElementById('evilTotal').textContent = evilTotal;
+        }
+
+        // Display ID values
+        function displayIdValue(id, team, value) {
+            const idValuesDiv = document.getElementById('idValues');
+            const idValueElement = document.createElement('p');
+            idValueElement.textContent = `${id} (Team: ${team}, Value: ${value})`;
+            idValuesDiv.appendChild(idValueElement);
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorMessageDiv = document.getElementById('error-message');
+            errorMessageDiv.textContent = message;
+        }
+    </script>
 </body>
 </html>
