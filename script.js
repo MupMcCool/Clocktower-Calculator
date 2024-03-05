@@ -27,3 +27,8 @@ document.getElementById('calculateButton').addEventListener('click', async () =>
         // Show error message to the user
     }
 });
+
+// Animation for the raven image
+const raven = document.getElementById('raven');
+// Implement animation logic here (e.g., move and bounce)
+// You can use CSS keyframes or JavaScript animations
