@@ -2,621 +2,621 @@
 {
 "role": "snake_charmer",
 "powerScore": 130,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "poppy_grower",
 "powerScore": 124,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "professor",
 "powerScore": 123,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "virgin",
 "powerScore": 122,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "high_priestess",
 "powerScore": 121,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "philosopher",
 "powerScore": 120,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "dreamer",
 "powerScore": 115,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "clockmaker",
 "powerScore": 113,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "farmer",
 "powerScore": 109,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "fortune_teller",
 "powerScore": 108,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "chef",
 "powerScore": 105,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "sage",
 "powerScore": 103,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "washerwoman",
 "powerScore": 100,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "investigator",
 "powerScore": 97,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "grandmother",
 "powerScore": 96,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "savant",
 "powerScore": 95,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "flowergirl",
 "powerScore": 94,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "lycanthrope",
 "powerScore": 93,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "nightwatchman",
 "powerScore": 91,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "slayer",
 "powerScore": 90,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "alchemist",
 "powerScore": 89,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "chambermaid",
 "powerScore": 88,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "courtier",
 "powerScore": 84,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "choirboy",
 "powerScore": 83,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "cannibal",
 "powerScore": 82,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "oracle",
 "powerScore": 81,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "king",
 "powerScore": 80,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "undertaker",
 "powerScore": 79,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "exorcist",
 "powerScore": 78,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "empath",
 "powerScore": 77,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "minstrel",
 "powerScore": 76,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "tea_lady",
 "powerScore": 75,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "ravenkeeper",
 "powerScore": 74,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "engineer",
 "powerScore": 73,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "mayor",
 "powerScore": 72,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "bounty_hunter",
 "powerScore": 71,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "gossip",
 "powerScore": 68,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "noble",
 "powerScore": 65,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "balloonist",
 "powerScore": 64,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "shugenja",
 "powerScore": 63,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "pixie",
 "powerScore": 62,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "preacher",
 "powerScore": 61,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "town_crier",
 "powerScore": 61,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "village_idiot",
 "powerScore": 59,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "artist",
 "powerScore": 58,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "magician",
 "powerScore": 57,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "mathematician",
 "powerScore": 56,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "innkeeper",
 "powerScore": 55,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "monk",
 "powerScore": 53,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "librarian",
 "powerScore": 51,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "seamstress",
 "powerScore": 50,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "knight",
 "powerScore": 49,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "steward",
 "powerScore": 48,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "soldier",
 "powerScore": 47,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "juggler",
 "powerScore": 46,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "fisherman",
 "powerScore": 45,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "amnesiac",
 "powerScore": 44,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "gambler",
 "powerScore": 43,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "sailor",
 "powerScore": 41,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "general",
 "powerScore": 40,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "fool",
 "powerScore": 39,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "pacifist",
 "powerScore": 38,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "atheist",
 "powerScore": 35,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "cult_leader",
 "powerScore": 23,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "huntsman",
 "powerScore": 13,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "acrobat",
 "powerScore": 20,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "golem",
 "powerScore": 14,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "puzzlemaster",
 "powerScore": 14,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "lunatic",
 "powerScore": 7,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "tinker",
 "powerScore": 5,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "moonchild",
 "powerScore": 4,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "heretic",
 "powerScore": 3,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "mutant",
 "powerScore": 0,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "recluse",
 "powerScore": -1,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "snitch",
 "powerScore": -3,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "sweetheart",
 "powerScore": -4,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "drunk",
 "powerScore": -6,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "barber",
 "powerScore": -7,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "hatter",
 "powerScore": -9,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "plague_doctor",
 "powerScore": -10,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "politician",
 "powerScore": -12,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "goon",
 "powerScore": -14,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "damsel",
 "powerScore": -15,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "klutz",
 "powerScore": -16,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "saint",
 "powerScore": -20,
-"team": "good"
+"alignment": "good"
 },
 {
 "role": "goblin",
 "powerScore": 105,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "mezepheles",
 "powerScore": 104,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "pit-hag",
 "powerScore": 103,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "devils_advocate",
 "powerScore": 95,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "cerenovus",
 "powerScore": 92,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "marionette",
 "powerScore": 82,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "baron",
 "powerScore": 77,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "godfather",
 "powerScore": 76,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "poisoner",
 "powerScore": 72,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "evil_twin",
 "powerScore": 70,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "witch",
 "powerScore": 69,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "mastermind",
 "powerScore": 68,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "psychopath",
 "powerScore": 67,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "fearmonger",
 "powerScore": 66,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "boomdandy",
 "powerScore": 65,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "scarlet_woman",
 "powerScore": 63,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "assassin",
 "powerScore": 62,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "spy",
 "powerScore": 49,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "widow",
 "powerScore": 47,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "harpy",
 "powerScore": 45,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "organ_grinder",
 "powerScore": 44,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "vizier",
 "powerScore": 42,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "fang_gu",
 "powerScore": 60,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "vortox",
 "powerScore": 52,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "imp",
 "powerScore": 50,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "po",
 "powerScore": 48,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "no_dashii",
 "powerScore": 47,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "al-hadikhia",
 "powerScore": 40,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "lil_monsta",
 "powerScore": 38,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "riot",
 "powerScore": 35,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "leviathan",
 "powerScore": 34,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "legion",
 "powerScore": 33,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "pukka",
 "powerScore": 32,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "shabaloth",
 "powerScore": 31,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "ojo",
 "powerScore": 30,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "kazali",
 "powerScore": 29,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "lleech",
 "powerScore": 28,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "vigormortis",
 "powerScore": 27,
-"team": "evil"
+"alignment": "evil"
 },
 {
 "role": "zombuul",
 "powerScore": 26,
-"team": "evil"
+"alignment": "evil"
 }
 ]
