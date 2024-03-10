@@ -1,34 +1,41 @@
-// Initialize totals
+// script.js
+// Developer Note: Initialize the totals and fetch the reference data on load
 let goodTotal = 0;
 let evilTotal = 0;
+let referenceData = {};
 
-// Fetch data from the provided JSON URL (use fetch or XMLHttpRequest)
-// Store it in local storage (localStorage.setItem)
+window.onload = function() {
+    fetch('path_to_powerScore.json')
+    .then(response => response.json())
+    .then(data => referenceData = data);
+};
 
-// Event listener for the "Calculate" button
-document.getElementById('calculateButton').addEventListener('click', async () => {
-    try {
-        // Get user-submitted JSON file (use input[type="file"])
-        // Validate that it's a JSON file
-
-        // Read the submitted JSON
-        // Check if "id" matches any "name" from stored data
-        // Update goodTotal or evilTotal accordingly
-
-        // Display totals
+// Developer Note: Set up the file input listener to handle JSON file submissions
+document.getElementById('jsonFileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file.type !== "application/json") {
+        alert('Please submit a JSON file.');
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const userJson = JSON.parse(e.target.result);
+        // Developer Note: Compare user JSON to reference and update totals
+        userJson.forEach(item => {
+            const referenceItem = referenceData.find(ref => ref.name === item.name);
+            if (referenceItem) {
+                if (referenceItem.team === 'good') {
+                    goodTotal += referenceItem.powerScore;
+                } else if (referenceItem.team === 'evil') {
+                    evilTotal += referenceItem.powerScore;
+                }
+                // Developer Note: Display used IDs
+                document.getElementById('usedIds').innerHTML += `<p>${referenceItem.id} - ${referenceItem.team} - ${referenceItem.powerScore}</p>`;
+            }
+        });
+        // Developer Note: Update the scoreboard
         document.getElementById('goodTotal').textContent = goodTotal;
         document.getElementById('evilTotal').textContent = evilTotal;
-
-        // Display used "id" values with corresponding "team" and "value"
-        // (Append to #idValues)
-
-    } catch (error) {
-        console.error('Error processing JSON:', error);
-        // Show error message to the user
-    }
+    };
+    reader.readAsText(file);
 });
-
-// Animation for the raven image
-const raven = document.getElementById('raven');
-// Implement animation logic here (e.g., move and bounce)
-// You can use CSS keyframes or JavaScript animations
