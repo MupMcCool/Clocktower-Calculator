@@ -5,7 +5,7 @@ let evilTotal = 0;
 let referenceData = {};
 
 window.onload = function() {
-    fetch('path_to_powerScore.json')
+    fetch(powerScore.json)
     .then(response => response.json())
     .then(data => referenceData = data);
 };
