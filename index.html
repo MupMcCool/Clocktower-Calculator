@@ -1,75 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clocktower Calculator</title>
-<style>
-  body { font-family: Arial, sans-serif; }
-  #results { margin-top: 20px; }
-</style>
-<script>
-  // Initialize totals and averages
-  let goodTotal = 0;
-  let evilTotal = 0;
-  let goodAve = 0;
-  let evilAve = 0;
-  let goodCount = 0;
-  let evilCount = 0;
-
-  // Fetch the powerScore data and store it locally
-  fetch('https://github.com/MupMcCool/Clocktower-Calculator/blob/33a29b1ebae19eddf8abaf1d1bd9c0306c661794/powerScore.json')
-    .then(response => response.json())
-    .then(data => localStorage.setItem('powerScores', JSON.stringify(data)))
-    .catch(error => console.error('Error fetching data:', error));
-
-  function handleFileUpload(event) {
-    const file = event.target.files[0];
-    if (file.type !== 'application/json') {
-      alert('Please upload a JSON file.');
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const userJson = JSON.parse(e.target.result);
-      const powerScores = JSON.parse(localStorage.getItem('powerScores'));
-
-      userJson.forEach(character => {
-        const match = powerScores.find(item => item.name === character.name);
-        if (match) {
-          if (match.alignment === 'good') {
-            goodTotal += match.powerScore;
-            goodCount++;
-          } else if (match.alignment === 'evil') {
-            evilTotal += match.powerScore;
-            evilCount++;
-          }
-        }
-      });
-
-      // Update averages
-      goodAve = goodCount > 0 ? goodTotal / goodCount : 0;
-      evilAve = evilCount > 0 ? evilTotal / evilCount : 0;
-
-      // Display results
-      document.getElementById('goodTotal').textContent = 'Good: ' + goodTotal;
-      document.getElementById('evilTotal').textContent = 'Evil: ' + evilTotal;
-      document.getElementById('goodAve').textContent = 'Good Average: ' + goodAve.toFixed(2);
-      document.getElementById('evilAve').textContent = 'Evil Average: ' + evilAve.toFixed(2);
-    };
-    reader.readAsText(file);
-  }
-</script>
+    <meta charset="UTF-8">
+    <title>Clocktower Calculator</title>
+    <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Clocktower Calculator</h1>
-<input type="file" id="fileInput" accept=".json" onchange="handleFileUpload(event)">
-<div id="results">
-  <p id="goodTotal">Good: 0</p>
-  <p id="evilTotal">Evil: 0</p>
-  <p id="goodAve">Good Average: 0</p>
-  <p id="evilAve">Evil Average: 0</p>
-</div>
+    <h1>Clocktower Calculator</h1>
+    <input type="file" id="jsonFile" accept=".json" />
+    <button onclick="processFile()">Submit</button>
+    <p id="goodTotal"></p>
+    <p id="evilTotal"></p>
+    <p id="goodAve"></p>
+    <p id="evilAve"></p>
+    <!-- Link to your JavaScript file -->
+  <script src="script.js"></script>
 </body>
 </html>
