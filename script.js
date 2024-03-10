@@ -5,7 +5,7 @@ let evilTotal = 0;
 let referenceData = {};
 
 window.onload = function() {
-    fetch(powerScore.json)
+    fetch(https://github.com/MupMcCool/Clocktower-Calculator/blob/ab79fe28e2fcdd9497b40ea3cebf8515a0560c56/powerScore.json)
     .then(response => response.json())
     .then(data => referenceData = data);
 };
