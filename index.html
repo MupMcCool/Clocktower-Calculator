@@ -1,20 +1,19 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clocktower Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clocktower Calculator</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Clocktower Calculator</h1>
-    <button id="calculateButton">Calculate</button>
-    <div id="result">
-        <p>Good: <span id="goodTotal">0</span></p>
-        <p>Evil: <span id="evilTotal">0</span></p>
-    </div>
-    <div id="idValues"></div>
-    <img src="https://i.ibb.co/JH6rg0Z/image244.png" alt="Moving Raven" id="raven">
-    <script src="script.js"></script>
+<div id="scoreboard">
+    <p>Good: <span id="goodTotal">0</span></p>
+    <p>Evil: <span id="evilTotal">0</span></p>
+</div>
+<div id="usedIds"></div>
+<input type="file" id="jsonFileInput" accept=".json">
+<script src="script.js"></script>
 </body>
 </html>
